@@ -1,0 +1,49 @@
+/* ==========================================================================
+  
+Jason Roeckle Portfolio Overrides
+
+	1. HTML, Body
+
+========================================================================== */
+
+
+/* ==========================================================================
+
+	1. HTML, Body
+
+========================================================================== */
+
+html, body {
+	height           : 100%;
+	margin           : 0;
+	background-color : $offWhite;
+}
+
+hr {
+	border       : solid $lineGrey;
+	border-width : 1px 0 0;
+	width        : 40%;
+	margin       : rem-calc(80) auto;
+}
+
+.old-ie-warning {
+	background-color : #ff0008;
+	color            : #fff;
+	display          : none;
+	p {
+		color : #fff;
+	}
+	a {
+		color       : #fff;
+		font-weight : bold;
+	}
+}
+
+.lt-ie9 .old-ie-warning {
+	display : block;
+}
+
+.copy a {
+	color       : $offBlack;
+	text-decoration : underline;
+}

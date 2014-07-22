@@ -1,0 +1,54 @@
+/* ==========================================================================
+  
+jQuery MMenu Files
+
+	1. Imports
+	2. Overrides
+
+========================================================================== */
+
+/* ==========================================================================
+
+	1. Imports
+
+========================================================================== */
+
+
+@import "mmenu/jquery.mmenu";
+@import "mmenu/extensions/jquery.mmenu.positioning";
+
+
+
+/* ==========================================================================
+
+	2. Overrides
+
+========================================================================== */
+
+.slide-menu {
+	display : none;
+	&.loaded {
+		display: block;
+	}
+}
+
+.mm-list>li:not(.mm-subtitle):not(.mm-label):not(.mm-search):not(.mm-noresults):after {
+	border-bottom-width : 0;
+}
+
+html.mm-opened .mm-page {
+	box-shadow : none;
+}
+
+.mmenu-wrapper {
+	position : absolute;
+	top      : 0;
+	margin   : 0;
+	height   : 100%;
+	width    : 100%;
+	z-index  : 10;
+}
+
+.slide-content.mm-panel {
+	background-color : #fff;
+}

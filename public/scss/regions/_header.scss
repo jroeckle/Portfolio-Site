@@ -1,0 +1,168 @@
+/* ==========================================================================
+  
+Jason Roeckle Portfolio Main Area
+
+
+	1. Root Element
+	2. Typography
+	3. Graphic
+
+========================================================================== */
+
+
+/* ==========================================================================
+
+	1. Root Element
+
+========================================================================== */
+
+header {
+	background-color : $thatsobviouslysalmon;
+	min-height       : rem-calc(460);
+	padding-top      : rem-calc(60);
+	@include transition(background-color, 800ms, ease-out);
+}
+
+body {
+	
+	&.tomb-raider header {
+		background-color : $tombraidercolor;
+	}
+	&.saints-row header {
+		background-color : $saintsrowcolor;
+	}
+	
+	&.ac-unity header {
+		background-color : $acunitycolor;
+	}
+
+	&.fox-emmy header {
+		background-color : $foxcolor;
+	}
+
+	&.man-of-steel header {
+		background-color : $manofsteelcolor;
+	}
+
+	&.safety-smart header {
+		background-color : $ulcolor;
+	}
+}
+
+@media #{$small-only} { 
+	header {
+		height      : 70%;
+		padding-top : rem-calc(10);
+	}
+}
+
+/* ==========================================================================
+
+	2. Typography
+
+========================================================================== */
+
+
+header > nav .logo h3 {
+	color          : #fff;
+	font-family    : $title-font;
+	text-transform : uppercase;
+	font-size      : rem-calc(24);
+}
+
+header > nav .header-nav a {
+	margin-top : rem-calc(5);
+	color      : #fff;
+	@include proximaLight();
+}
+
+@media #{$small-only} {
+	header > nav .header-nav a {
+		display     : block;
+		font-size   : rem-calc(20);
+		line-height : 2.4em;
+		width       : 50%;
+		float       : left;
+	}
+
+	header > nav .header-nav::after {
+		clear : both;
+	}
+}
+
+.details-view header > .hero {
+	@include animation(0s, 200ms, fadeOut);
+}
+
+header > .hero h1 {
+	margin-top : rem-calc(69);
+	color : #fff;
+	font-family : $title-font;
+	font-size : rem-calc(64);
+	text-transform : uppercase;
+	line-height : 1em;
+}
+
+@media #{$small-only} { 
+	header > .hero h1 {
+		font-size : rem-calc(55);
+	}
+}
+
+header > .hero h3 {
+	color       : $darkPurple;
+	@include proximaLight();
+	margin-top  : rem-calc(55);
+}
+
+@media #{$small-only} { 
+	header > .hero h1, header > .hero h3 {
+		margin-right : rem-calc(10);
+	}
+}
+
+
+/* ==========================================================================
+
+	3. Graphic
+
+========================================================================== */
+
+header .me {
+	height : 353px;
+	&:hover {
+		cursor : pointer;
+	}
+	&:hover:after {
+		@include animation(0s, 200ms, fadeOut);
+	}
+	&:hover > .goofy {
+		@include animation(0s, 200ms, fadeIn);
+	}
+	&:after {
+		@include animation(0s, 200ms, fadeIn);
+		content         : "";
+		top             : 0;
+		left            : 0;
+		bottom          : 0;
+		right           : 0;
+		position        : absolute;
+		height          : 353px;
+		display         : block;
+		background      : url('../img/landing/me.png') bottom right no-repeat;
+		background-size : contain;
+	}
+}
+
+header .me > .goofy {
+	background      : url('../img/landing/goofy.png') bottom left no-repeat;
+	background-size : contain;
+	height          : 353px;
+	@include opacity (0);
+}
+
+@media #{$small-only} { 
+	header .me {
+		display : none;
+	}
+}

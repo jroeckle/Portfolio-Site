@@ -1,0 +1,83 @@
+/* ==========================================================================
+  
+Jason Roeckle Portfolio Main Area
+
+
+	1. Root Element
+	2. Portfolio List
+
+========================================================================== */
+
+
+/* ==========================================================================
+
+	1. Root Element
+
+========================================================================== */
+
+#main {
+	min-height : 100%;
+}
+
+#main > .landing-wrapper {
+	padding          : rem-calc(80) 0;
+	background-color : $offWhite;
+	@include transition(transform, 600ms, ease-out);
+}
+
+.details-view #main > .landing-wrapper {
+	@include transform(translate(0, -300px));
+}
+
+@media #{$small-only} {
+	.details-view #main > .landing-wrapper {
+		@include transform(translate(0, -350px));
+	}
+}
+
+#main .title {
+	line-height : 1em;
+	font-size   : rem-calc(60);
+}
+
+#main .subtitle {
+	font-size : rem-calc(18);
+}
+	
+/* ==========================================================================
+
+	2. Portfolio List
+
+========================================================================== */
+
+
+.work-icon {
+	display : block;
+	background-color : $darkGrey;
+
+	@include transition(background-color, 300ms, ease-out);
+
+	&.tomb-raider:hover {
+		background-color : $tombraidercolor;
+	}
+
+	&.saints-row:hover {
+		background-color : $saintsrowcolor;
+	}
+	
+	&.ac-unity:hover {
+		background-color : $acunitycolor;
+	}
+
+	&.fox-emmy:hover {
+		background-color : $foxcolor;
+	}
+
+	&.man-of-steel:hover {
+		background-color : $manofsteelcolor;
+	}
+
+	&.safety-smart:hover {
+		background-color : $ulcolor;
+	}
+}

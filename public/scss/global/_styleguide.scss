@@ -1,0 +1,97 @@
+/* ==========================================================================
+  
+Debris STYLE GUIDE SETTINGS
+
+
+	1. Colors
+	2. Typefaces/Fonts
+	3. Other Brand Colors
+
+========================================================================== */
+
+
+/* ==========================================================================
+
+	1. Colors
+
+========================================================================== */
+
+$thatsobviouslysalmon : #e65e62;
+$lightGrey            : #b5b3b3;
+$darkGrey             : #211e1e;
+$lineGrey             : #bbb8ab;
+$grey                 : #71766d;
+$darkPurple           : #6b3241;
+$offBlack             : #111111;
+$copyColor            : #252525;
+$offWhite             : #e8ece5;
+
+/* ==========================================================================
+
+	2. Typefaces/Fonts
+
+========================================================================== */
+
+
+$title-font         : "abril-fatface", serif;
+$proxima-nova       : "proxima-nova", sans-serif;
+
+@mixin proximaLight() {
+	font-family : $proxima-nova;
+	font-weight : 100;
+}
+
+@mixin titleElement() {
+	font-family : $proxima-nova;
+	font-weight : 900;
+	color       : $offBlack;
+}
+
+@mixin subtitleElement() {
+	font-family : $proxima-nova;
+	font-weight : 600;
+	color       : $grey;
+	line-height : 2em;
+}
+
+@mixin copyElement() {
+	@include proximaLight();
+	color       : $copyColor;
+}
+
+.italic-fluff {
+	font-family : "museo-slab";
+	font-style  : italic;
+}
+
+.title {
+	@include titleElement();
+}
+
+.subtitle {
+	@include subtitleElement();
+}
+
+.copy {
+	@include copyElement();
+	> p {
+		line-height : 1.8;
+	}
+	> h3 {
+		font-family : $title-font;
+		color       : $copyColor;
+	}
+}
+
+/* ==========================================================================
+
+	3. Other Brand Colors
+
+========================================================================== */
+
+$tombraidercolor : #780001;
+$saintsrowcolor  : #411c6d;
+$acunitycolor    : #0e3851;
+$foxcolor        : #8b8b8b;
+$manofsteelcolor : #630e15;
+$ulcolor         : #55bab7;

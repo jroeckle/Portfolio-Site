@@ -1,0 +1,51 @@
+<h3 class="subtitle text-center">
+	<%= subtitle %>
+</h3>
+<h1 class="title text-center">
+	<%= title %>
+</h1>
+<section class="illustration-graphic">
+	<img class="me" src="/img/work/<%= slug %>/header.jpg" />
+</section>
+
+
+<section class="row">
+	<aside class="copy stats columns small-10 medium-4 medium-push-7 small-centered medium-uncentered end">
+		<h3>Tech</h3>
+		<p>
+			<% _.each(tech, function(techitem, index) { %>  
+				<%= techitem %><% if (tech.length-1 != index) { %>, <% } %> 
+			<% }); %>
+		</p>
+		<h3>Clients</h3>
+		<p>
+			<% _.each(clients, function(client, index) { %>  
+				<%= client %><% if (clients.length-1 != index) { %>, <% } %>
+			<% }); %>
+		</p>
+		<% if(typeof awards != 'undefined') { %>
+			<h3>Awards</h3>
+			
+			<% _.each(awards, function(award, index) { %>  
+				<p>
+					<span class="award-title"><%= award.title %></span> <%= award.organization %> 
+				</p>
+			<% }); %>
+								
+		<% } %>
+
+		<% if(typeof livelink != 'undefined') { %>
+			<h3>Project URL</h3>
+			<p>
+				<a href="<%= livelink %>" target="_blank">
+					<%= livelink %>
+				</a>
+			</p>
+		<% } %>
+		
+	</aside>
+	<div class="copy columns small-10 medium-pull-3 medium-6 small-centered medium-uncentered">
+		<%= copy %>
+		<a class="expand button back-button" href="#/work"> Back to Portfolio </a>
+	</div>
+</section>

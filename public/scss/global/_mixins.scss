@@ -1,0 +1,84 @@
+/* ==========================================================================
+  
+Debris scss mixins
+
+
+	1. CSS3 Mixins
+	2. Sticky Footer
+
+========================================================================== */
+
+/* ==========================================================================
+
+	1. CSS3 Mixins
+
+========================================================================== */
+
+
+@mixin opacity($value){
+	$IEValue: $value*100;
+	opacity: $value;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+	filter: alpha(opacity=$IEValue);
+}
+
+@mixin transition($properties: all, $duration: .3s, $easing: ease-in-out) {
+	@if length($properties) > 1 {
+		transition-property                : $properties;
+		transition-duration                : $duration;
+		transition-timing-function         : $easing;
+		-webkit-transition-property        : $properties;
+		-webkit-transition-duration        : $duration;
+		-webkit-transition-timing-function : $easing;
+		-moz-transition-property           : $properties;
+		-moz-transition-duration           : $duration;
+		-moz-transition-timing-function    : $easing;
+		-ms-transition-property            : $properties;
+		-ms-transition-duration            : $duration;
+		-ms-transition-timing-function     : $easing;
+	} @else {
+		-webkit-transition : $properties $duration $easing;
+		-moz-transition    : $properties $duration $easing;
+		-ms-transition     : $properties $duration $easing;
+		transition         : $properties $duration $easing;
+	}
+}
+
+@mixin perspective($value) {
+    -webkit-perspective : $value;
+    -moz-perspective    : $value;
+    -ms-perspective     : $value;
+    perspective         : $value;
+}
+
+@mixin perspective-origin($x, $y) {
+	-webkit-perspective-origin : $x $y;
+    -moz-perspective-origin    : $x $y;
+    -ms-perspective-origin     : $x $y;
+    perspective-origin         : $x $y;
+}
+
+@mixin transform($value) {
+	-webkit-transform: $value;
+	-ms-transform: $value;
+	-webkit-transform: $value;
+	transform: $value;
+}
+
+/* ==========================================================================
+
+	2. Sticky Footer
+
+========================================================================== */
+
+$stickyFooterVal : 40;
+
+@function stickyFooterHeight($invert) {
+	@if $invert {
+	 	@return rem-calc(-$stickyFooterVal);
+	} @else {
+		@return rem-calc($stickyFooterVal);
+	}
+}
+
+@import "./animations";

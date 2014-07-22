@@ -1,0 +1,78 @@
+/* ==========================================================================
+  
+Jason Roeckle Portfolio Details View
+
+
+	1. Graphics
+	2. Copy
+	3. Screens
+
+========================================================================== */
+
+
+/* ==========================================================================
+
+	1. Graphics
+
+========================================================================== */
+
+.details .illustration-graphic {
+	text-align : center;
+	margin-top : rem-calc(30);
+}
+
+/* ==========================================================================
+
+	2. Copy
+
+========================================================================== */
+
+.details .copy {
+	margin-top : rem-calc(50);
+}
+
+@media #{$small-only} {
+	#main .title {
+		font-size : rem-calc(32);
+	}
+}
+
+
+/* ==========================================================================
+
+	3. Screens
+
+========================================================================== */
+
+.screen-cap {
+	margin : 1em 0;
+}
+
+.details .back-button {
+	@include subtitleElement();
+	background-color : $thatsobviouslysalmon;
+	color            : #fff;
+	font-size        : rem-calc(24);
+	margin-top       : rem-calc(100);
+}
+
+.youtube-player-wrapper {
+	position       : relative;
+	padding-bottom : 56.25%; /* 16:9 */
+	padding-top    : 25px;
+	height         : 0;
+	margin-bottom  : rem-calc(20);
+}
+
+.details .youtube-player, .details iframe.youtube-player, .details object.youtube-player, .details embed.youtube-player  {
+	position : absolute;
+	top      : 0;
+	left     : 0;
+	width    : 100%;
+	height   : 100%;
+}
+
+.video-cap {
+	width  : 100%;
+	height : auto;
+}
