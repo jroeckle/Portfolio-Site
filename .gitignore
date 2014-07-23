@@ -6,3 +6,4 @@ public/build/*
 public/build/
 node_modules
 npm-debug.log
+assets
