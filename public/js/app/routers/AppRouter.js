@@ -3,7 +3,7 @@ define(['marionette', 'controllers/Controller'], function(Marionette, Controller
        //"index" must be a method in AppRouter's controller
        appRoutes: {
            "": "index",
-           "work" : "scrolltoWork",
+           "work" : "showWorkSection",
            "about" : "showAboutSection",
            "work/:id" : "showPortfolioItem"
        }
