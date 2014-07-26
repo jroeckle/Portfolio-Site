@@ -20,7 +20,7 @@ define(['App', 'jquery', 'backbone', 'marionette', 'views/LandingView', 'data/po
             }));
         },
 
-        scrolltoWork : function() {
+        showWorkSection : function() {
 
             this.clearDetailsView();
 
@@ -35,7 +35,7 @@ define(['App', 'jquery', 'backbone', 'marionette', 'views/LandingView', 'data/po
         showPortfolioItem : function(_slug) {
 
             this.showDetailsView();
-            this.scrollToSection();
+            window.scrollTo( 0, 0 );
 
             $('body')
                 .addClass(_slug)
@@ -51,7 +51,7 @@ define(['App', 'jquery', 'backbone', 'marionette', 'views/LandingView', 'data/po
         showAboutSection : function() {
 
             this.showDetailsView();
-            this.scrollToSection();
+            window.scrollTo( 0, 0 );
 
             this.clearHeaderColor();
             
